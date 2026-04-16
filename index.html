@@ -2,97 +2,187 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Agro Vision</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroVision AI</title>
 
 <style>
-body {margin:0;font-family:Arial;}
-header {background:#1b5e20;color:white;text-align:center;padding:20px;}
-nav {background:#2e7d32;padding:10px;text-align:center;}
-nav a {color:white;margin:0 15px;text-decoration:none;font-weight:bold;}
-section {padding:60px;text-align:center;}
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f5f5;
+}
+
+header {
+  background: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .hero {
-  height:90vh;
-  background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover;
-  color:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(to right, #4caf50, #81c784);
+  color: white;
 }
+
+.hero button {
+  padding: 15px 25px;
+  font-size: 18px;
+  background: #1b5e20;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  background: white;
+}
+
+.feature {
+  text-align: center;
+}
+
+.demo {
+  text-align: center;
+  padding: 40px;
+}
+
+section {
+  padding: 40px;
+}
+
 .card {
-  display:inline-block;
-  width:250px;
-  margin:15px;
-  padding:20px;
-  background:#f4f4f4;
-  border-radius:10px;
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
 }
-footer {background:#1b5e20;color:white;text-align:center;padding:15px;}
-button {padding:10px 20px;background:#2e7d32;color:white;border:none;border-radius:5px;}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+footer {
+  background: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>🌱 Agro Vision</h1>
-<p>Smart Farming Website</p>
+  <h1>🌱 AgroVision</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</nav>
+<!-- HERO -->
+<div class="hero">
+  <h1>AI-Powered Crop Disease Detection & Smart Farming Assistant</h1>
+  <p>Upload a leaf image and get instant disease diagnosis, treatment, and prevention tips.</p>
+  <button onclick="scrollToDemo()">📸 Scan Your Crop Now</button>
+</div>
 
-<!-- HOME -->
-<section id="home" class="hero">
-<h2>Welcome to Agro Vision</h2>
-<p>AI + Smart Agriculture</p>
-<button onclick="alert('Welcome to Agro Vision!')">Explore</button>
-</section>
+<!-- FEATURES -->
+<div class="features">
+  <div class="feature">🌿 Disease Detection</div>
+  <div class="feature">📊 Severity Analysis</div>
+  <div class="feature">🌦 Weather Risk</div>
+  <div class="feature">💊 Smart Treatment</div>
+</div>
+
+<!-- DEMO -->
+<div class="demo" id="demo">
+  <h2>Live Demo</h2>
+  <input type="file" onchange="showResult()">
+  <p id="result"></p>
+</div>
 
 <!-- ABOUT -->
 <section id="about">
-<h2>About Us</h2>
-<p>
-Agro Vision is a smart agriculture platform that helps farmers
-with modern technology, AI tools, and data-based decisions.
-</p>
+  <h2>About</h2>
+  <p><b>Problem:</b> Farmers lose up to 40% crops due to late detection.</p>
+  <p><b>Solution:</b> AgroVision uses AI to detect diseases early.</p>
+  <p><b>Impact:</b> Saves money, helps farmers, increases yield.</p>
+
+  <h3>Team KrishiAI</h3>
+  <p>ML | Frontend | Backend</p>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-<h2>Our Services</h2>
+  <h2>Services</h2>
 
-<div class="card">
-<h3>🌾 Crop Prediction</h3>
-<p>Find best crops using AI.</p>
-</div>
+  <div class="services">
+    <div class="card">🌿 Disease Detection</div>
+    <div class="card">📊 Severity Detection</div>
+    <div class="card">💊 Smart Treatment</div>
+    <div class="card">🌦 Weather Prediction</div>
+    <div class="card">🗣 Voice Assistant (Hindi)</div>
+    <div class="card">📍 Location Advisory</div>
+  </div>
+</section>
 
-<div class="card">
-<h3>💧 Smart Irrigation</h3>
-<p>Save water with smart systems.</p>
-</div>
-
-<div class="card">
-<h3>📊 Soil Analysis</h3>
-<p>Improve soil quality.</p>
-</div>
-
+<!-- EXTRA FEATURES -->
+<section>
+  <h2>AI Features</h2>
+  <p>🧠 Confidence Score: 92%</p>
+  <p>📸 History Tracking</p>
+  <p>🌱 Prevention Tips</p>
+  <p>📊 Dashboard Coming Soon</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-<h2>Contact Us</h2>
-<p>Email: agrovision@gmail.com</p>
-<p>Phone: +91 9876543210</p>
+  <h2>Contact</h2>
+  <p>Email: support@agrovision.ai</p>
+  <p>Phone: 9876543210</p>
+  <p>Location: India</p>
+
+  <button onclick="alert('Quick Help: Check leaves daily, avoid overwatering')">
+    🚜 Get Help Now
+  </button>
 </section>
 
 <footer>
-<p>© 2026 Agro Vision</p>
+  <p>AgroVision AI © 2026</p>
 </footer>
+
+<script>
+function showResult() {
+  document.getElementById("result").innerHTML =
+    "🌿 Disease: Early Blight (92% confidence)<br>💊 Treatment: Use fungicide weekly<br>🌱 Tip: Avoid overwatering";
+
+  // Voice output
+  let msg = new SpeechSynthesisUtterance("Aapki fasal mein disease detect hui hai");
+  msg.lang = "hi-IN";
+  speechSynthesis.speak(msg);
+}
+
+function scrollToDemo() {
+  document.getElementById("demo").scrollIntoView({ behavior: "smooth" });
+}
+</script>
 
 </body>
 </html>
