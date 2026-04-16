@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="new.css">
 <html>
 <head>
-<title>AgroVision AI</title>
+<title>AgroVision</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -11,42 +12,43 @@
 <header>
 <h2>🌱 AgroVision</h2>
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="dashboard.html">Dashboard</a>
-<a href="contact.html">Contact</a>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Dashboard</a>
+<a href="#">Contact</a>
 </nav>
 </header>
+
+<!-- HERO -->
 <section class="hero">
 <h1>AI-Powered Crop Detection</h1>
 <p>Scan crops, detect disease, get instant solution</p>
-<button onclick="scrollToDemo()">📸 Scan Now</button>
+<button>📸 Scan Now</button>
 </section>
 
-<section class="features">
+<!-- FEATURES -->
+<div class="features">
 <div>🌿 Detection</div>
 <div>📊 Analysis</div>
 <div>🌦 Weather Risk</div>
 <div>💊 Treatment</div>
-</section>
+</div>
 
+<!-- DEMO -->
 <section id="demo">
 <h2>Scan Crop</h2>
-<input type="file" id="file">
-<button onclick="analyze()">Analyze</button>
-<p id="output"></p>
+<input type="file">
+<button>Analyze</button>
 </section>
-
-<!-- VOICE BOT FLOAT BUTTON -->
-<div id="voiceBtn" onclick="startVoice()">🎤</div>
 
 <!-- CHATBOT -->
 <div id="chatbot">
 <div id="chatHeader">AI Assistant</div>
 <div id="chatBox"></div>
-<input id="chatInput" placeholder="Ask..." onkeypress="sendMsg(event)">
 </div>
 
-<script src="script.js"></script>
+<!-- MIC BUTTON -->
+<div id="voiceBtn">🎤</div>
+
 </body>
 </html>
