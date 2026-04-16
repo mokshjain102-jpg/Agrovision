@@ -1,176 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Valentine 💘</title>
+<title>Agro Vision</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-  margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(135deg,#ff3d6e,#ff758f);
-  font-family:'Comic Sans MS',cursive;
+body {margin:0;font-family:Arial;}
+header {background:#1b5e20;color:white;text-align:center;padding:20px;}
+nav {background:#2e7d32;padding:10px;text-align:center;}
+nav a {color:white;margin:0 15px;text-decoration:none;font-weight:bold;}
+section {padding:60px;text-align:center;}
+.hero {
+  height:90vh;
+  background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover;
   color:white;
-  overflow:hidden;
-  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
-
-.box{
-  background:rgba(0,0,0,0.35);
-  padding:40px;
-  border-radius:25px;
-  box-shadow:0 0 30px rgba(255,255,255,0.4);
-  animation:pop 1s ease;
-  position:relative;
+.card {
+  display:inline-block;
+  width:250px;
+  margin:15px;
+  padding:20px;
+  background:#f4f4f4;
+  border-radius:10px;
 }
-
-@keyframes pop{
-  from{transform:scale(0.5);opacity:0;}
-  to{transform:scale(1);opacity:1;}
-}
-
-h1{
-  font-size:2.3rem;
-  animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-  from{text-shadow:0 0 10px #fff;}
-  to{text-shadow:0 0 25px #ffdde1;}
-}
-
-button{
-  padding:12px 30px;
-  font-size:18px;
-  border:none;
-  border-radius:30px;
-  margin:10px;
-  cursor:pointer;
-}
-
-#yes{background:#00ff9c;}
-#no{background:#ff1744; position:absolute;}
-
-.heart{
-  position:absolute;
-  font-size:20px;
-  animation:float 6s linear infinite;
-}
-
-@keyframes float{
-  from{transform:translateY(100vh);}
-  to{transform:translateY(-10vh);}
-}
-
-.countdown{
-  margin-top:10px;
-  font-size:1.2rem;
-  color:#ffe6eb;
-}
+footer {background:#1b5e20;color:white;text-align:center;padding:15px;}
+button {padding:10px 20px;background:#2e7d32;color:white;border:none;border-radius:5px;}
 </style>
 </head>
 
 <body>
 
-<div class="box" id="box">
-  <h1 id="question">💖 Will you be my Valentine, Preeti? 💖</h1>
-  <div class="countdown" id="countdown"></div>
-  <button id="yes" onclick="yesStep()">YES 💕</button>
-  <button id="no" onclick="moveNo()">NO 💔</button>
+<header>
+<h1>🌱 Agro Vision</h1>
+<p>Smart Farming Website</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="hero">
+<h2>Welcome to Agro Vision</h2>
+<p>AI + Smart Agriculture</p>
+<button onclick="alert('Welcome to Agro Vision!')">Explore</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<p>
+Agro Vision is a smart agriculture platform that helps farmers
+with modern technology, AI tools, and data-based decisions.
+</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Our Services</h2>
+
+<div class="card">
+<h3>🌾 Crop Prediction</h3>
+<p>Find best crops using AI.</p>
 </div>
 
-<script>
+<div class="card">
+<h3>💧 Smart Irrigation</h3>
+<p>Save water with smart systems.</p>
+</div>
 
-let step=0;
-let timer=15;
-let chosenYes=false;
+<div class="card">
+<h3>📊 Soil Analysis</h3>
+<p>Improve soil quality.</p>
+</div>
 
-let countdownEl=document.getElementById("countdown");
-let interval=setInterval(()=>{
-  if(timer>=0){
-    countdownEl.innerHTML="⏳ Decide fast... "+timer+"s";
-    timer--;
-  }
-},1000);
+</section>
 
-setInterval(()=>{
-  let h=document.createElement("div");
-  h.className="heart";
-  h.innerHTML="💖";
-  h.style.left=Math.random()*100+"vw";
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),6000);
-},250);
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<p>Email: agrovision@gmail.com</p>
+<p>Phone: +91 9876543210</p>
+</section>
 
-function moveNo(){
-  if(chosenYes){
-    alert("Ek baar YES choose kar liya 😌 ab YES hi karo!");
-    return;
-  }
-  alert("Hehe NO allowed nahi 😜");
-  let noBtn=document.getElementById("no");
-  noBtn.style.top=Math.random()*80+"vh";
-  noBtn.style.left=Math.random()*80+"vw";
-}
-
-function yesStep(){
-  chosenYes=true;
-  step++;
-
-  if(step==1){
-    document.getElementById("question").innerHTML="😳 Sach me haan kar rahi ho, Preeti?";
-    beep();
-  }
-  else if(step==2){
-    document.getElementById("question").innerHTML="😏 Pakka Preeti? Last chance soch lo!";
-    beep();
-  }
-  else if(step==3){
-    document.getElementById("question").innerHTML="🥹 Dil se pooch lo ek baar aur, Preeti...";
-    beep();
-  }
-  else if(step==4){
-    finalScreen();
-  }
-}
-
-function finalScreen(){
-  clearInterval(interval);
-  document.body.innerHTML=
-  "<h1 style='font-size:3rem; animation:glow 2s infinite alternate;'>💘 THANK YOU PREETI 💘</h1>\
-   <p style='font-size:1.5rem;'>You just made my entire day ❤️</p>";
-  heartBlast();
-}
-
-function heartBlast(){
-  setInterval(()=>{
-    let h=document.createElement("div");
-    h.innerHTML="💘";
-    h.style.position="absolute";
-    h.style.left=Math.random()*100+"vw";
-    h.style.top="100vh";
-    h.style.fontSize="30px";
-    h.style.animation="float 4s linear";
-    document.body.appendChild(h);
-    setTimeout(()=>h.remove(),4000);
-  },150);
-}
-
-function beep(){
-  let ctx=new (window.AudioContext||window.webkitAudioContext)();
-  let osc=ctx.createOscillator();
-  osc.type="sine";
-  osc.frequency.value=600;
-  osc.connect(ctx.destination);
-  osc.start();
-  osc.stop(ctx.currentTime+0.1);
-}
-
-</script>
+<footer>
+<p>© 2026 Agro Vision</p>
+</footer>
 
 </body>
 </html>
-
